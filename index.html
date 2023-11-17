@@ -9,14 +9,14 @@
 <body>
     <header>
         <div class="container">
-            <h1>GitHub Sayfam</h1>
-            <p>Merhaba, benim adım Ahmet. Projelerimi keşfedin ve benimle iletişime geçin.</p>
+            <h1 class="title">GitHub Sayfam</h1>
+            <p class="subtitle">Merhaba, benim adım Ahmet. Projelerimi keşfedin ve benimle iletişime geçin.</p>
         </div>
     </header>
 
     <section id="profile" class="container">
         <div id="profile-image-container">
-            <img src="https://avatars.githubusercontent.com/u/126890200?v=4">
+            <img src="https://avatars.githubusercontent.com/u/126890200?v=4" alt="Profile Image">
         </div>
     </section>
 
@@ -34,45 +34,45 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-    const projectList = document.getElementById('project-list');
+            const projectList = document.getElementById('project-list');
 
-    // GitHub kullanıcı adını buraya yaz
-    const username = 'ahmetbalcik';
+            // GitHub kullanıcı adını buraya yaz
+            const username = 'ahmetbalcik';
 
-    // GitHub API'den kullanıcı bilgilerini çek
-    fetch(`https://api.github.com/users/${username}`)
-        .then(response => response.json())
-        .then(data => {
-            // Profil fotoğrafını göster
-            // Kullanıcının projelerini çek
-            fetch(`https://api.github.com/users/${username}/repos`)
+            // GitHub API'den kullanıcı bilgilerini çek
+            fetch(`https://api.github.com/users/${username}`)
                 .then(response => response.json())
-                .then(projects => {
-                    projects.forEach(project => {
-                        const projectDiv = document.createElement('div');
-                        projectDiv.classList.add('project');
+                .then(data => {
+                    // Profil fotoğrafını göster
+                    // Kullanıcının projelerini çek
+                    fetch(`https://api.github.com/users/${username}/repos`)
+                        .then(response => response.json())
+                        .then(projects => {
+                            projects.forEach(project => {
+                                const projectDiv = document.createElement('div');
+                                projectDiv.classList.add('project');
 
-                        const projectName = document.createElement('h3');
-                        projectName.textContent = project.name;
+                                const projectName = document.createElement('h3');
+                                projectName.textContent = project.name;
 
-                        const projectDescription = document.createElement('p');
-                        projectDescription.textContent = project.description || 'No description available.';
+                                const projectDescription = document.createElement('p');
+                                projectDescription.textContent = project.description || 'No description available.';
 
-                        projectDiv.appendChild(projectName);
-                        projectDiv.appendChild(projectDescription);
-                        projectList.appendChild(projectDiv);
-                    });
+                                projectDiv.appendChild(projectName);
+                                projectDiv.appendChild(projectDescription);
+                                projectList.appendChild(projectDiv);
+                            });
+                        })
+                        .catch(error => console.error('Error fetching GitHub projects:', error));
                 })
-                .catch(error => console.error('Error fetching GitHub projects:', error));
-        })
-        .catch(error => console.error('Error fetching GitHub profile:', error));
-});
-
+                .catch(error => console.error('Error fetching GitHub profile:', error));
+        });
     </script>
 </body>
 </html>
 
-<style>body {
+<style>
+body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
@@ -89,7 +89,7 @@
 header {
     background-color: #343a40;
     color: #fff;
-    padding: 50px 0;
+    padding: 100px 0;
     text-align: center;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: background-color 0.5s ease, box-shadow 0.5s ease;
@@ -99,17 +99,41 @@ header:hover {
     background-color: #007bff;
 }
 
-header h1 {
+.title {
     margin: 0;
-    font-size: 3em;
+    font-size: 4em;
+    letter-spacing: 2px;
+    animation: slideIn 1s ease-out;
 }
 
-header p {
-    font-size: 1.2em;
+.subtitle {
+    font-size: 1.5em;
+    animation: fadeIn 1s ease-out 0.5s;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 #profile-image-container {
     text-align: center;
+    margin-top: -50px;
 }
 
 #profile-image-container img {
@@ -163,4 +187,5 @@ section#contact p {
 }
 
 /* Hover efektleri ve özel stillendirmeleri buraya ekleyebilirsin */
+
 </style>
