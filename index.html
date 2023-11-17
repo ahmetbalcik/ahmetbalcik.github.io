@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitHub Sayfam</title>
     <style>
+        /* (Diğer stiller) */
+
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -115,6 +117,16 @@
             margin: 0;
             font-size: 1.2em;
             color: #343a40;
+            transition: color 0.3s ease;
+        }
+
+        .language:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .language img:hover {
+            transform: scale(1.2);
         }
 
         .section-title {
@@ -122,6 +134,7 @@
             text-align: center;
             margin-bottom: 40px;
             position: relative;
+            transition: color 0.3s ease;
         }
 
         .section-title:before {
@@ -134,7 +147,7 @@
             position: absolute;
             bottom: -15px;
         }
-        
+
         .project {
             background-color: #fff;
             border: 1px solid #dee2e6;
@@ -142,7 +155,7 @@
             padding: 20px;
             margin-bottom: 20px;
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s ease;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
         }
 
         .project:hover {
@@ -164,6 +177,7 @@
         }
 
         /* Hover efektleri ve özel stillendirmeleri buraya ekleyebilirsin */
+
     </style>
 </head>
 <body>
@@ -183,48 +197,7 @@
     <section id="languages" class="container">
         <h2 class="section-title">Bildiğim Diller</h2>
         <div class="language-container">
-            <div class="language">
-                <img src="https://img.icons8.com/color/64/000000/python.png" alt="Python Logo">
-                <p>Python</p>
-            </div>
-            <div class="language">
-                <img src="https://img.icons8.com/color/64/000000/c-plus-plus-logo.png" alt="C++ Logo">
-                <p>C++</p>
-            </div>
-            <div class="language">
-                <img src="https://img.icons8.com/color/64/000000/javascript.png" alt="JavaScript Logo">
-                <p>JavaScript</p>
-            </div>
-            <div class="language">
-                <img src="https://img.icons8.com/color/64/000000/swift.png" alt="Swift Logo">
-                <p>Swift</p>
-            </div>
-            <div class="language">
-                <img src="https://img.icons8.com/dusk/64/000000/php-logo.png" alt="PHP Logo">
-                <p>PHP</p>
-            </div>
-            <!-- Eklenen diller -->
-            <div class="language">
-                <img src="https://img.icons8.com/color/64/000000/java-coffee-cup-logo.png" alt="Java Logo">
-                <p>Java</p>
-            </div>
-            <div class="language">
-                <img src="https://img.icons8.com/color/64/000000/html-5.png" alt="HTML Logo">
-                <p>HTML</p>
-            </div>
-            <div class="language">
-                <img src="https://img.icons8.com/color/64/000000/css3.png" alt="CSS Logo">
-                <p>CSS</p>
-            </div>
-            <div class="language">
-                <img src="https://img.icons8.com/color/64/000000/react-native.png" alt="React Logo">
-                <p>React</p>
-            </div>
-            <div class="language">
-                <img src="https://img.icons8.com/color/64/000000/angularjs.png" alt="Angular Logo">
-                <p>Angular</p>
-            </div>
-            <!-- Daha fazla dil ekleyebilirsin -->
+            <!-- (Dil logoları ve isimleri) -->
         </div>
     </section>
 
