@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitHub Sayfam</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -17,6 +18,30 @@
     <section id="profile" class="container">
         <div id="profile-image-container">
             <img src="https://avatars.githubusercontent.com/u/126890200?v=4" alt="Profile Image">
+        </div>
+    </section>
+
+    <section id="languages" class="container">
+        <h2>Bildiğim Diller</h2>
+        <div class="language">
+            <img src="https://img.icons8.com/color/48/000000/python.png" alt="Python Logo">
+            <p>Python</p>
+        </div>
+        <div class="language">
+            <img src="https://img.icons8.com/color/48/000000/c-plus-plus-logo.png" alt="C++ Logo">
+            <p>C++</p>
+        </div>
+        <div class="language">
+            <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript Logo">
+            <p>JavaScript</p>
+        </div>
+        <div class="language">
+            <img src="https://img.icons8.com/color/48/000000/swift.png" alt="Swift Logo">
+            <p>Swift</p>
+        </div>
+        <div class="language">
+            <img src="https://img.icons8.com/dusk/48/000000/php-logo.png" alt="PHP Logo">
+            <p>PHP</p>
         </div>
     </section>
 
@@ -70,14 +95,26 @@
     </script>
 </body>
 </html>
-
 <style>
+    /* Reset CSS */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f8f9fa;
     color: #343a40;
+    overflow-x: hidden;
     transition: background-color 0.5s ease;
 }
 
@@ -149,13 +186,56 @@ header:hover {
     transform: scale(1.1);
 }
 
-section {
+#languages {
     margin: 40px 0;
 }
 
-h2 {
+.language {
+    display: inline-block;
+    text-align: center;
+    margin: 0 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.language img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.language p {
+    margin: 0;
+    font-size: 1.2em;
+    color: #343a40;
+}
+
+.language:hover {
+    transform: translateY(-5px);
+}
+
+.language img:hover {
+    transform: scale(1.2);
+}
+
+.section-title {
     color: #343a40;
     text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title:before {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: #343a40;
+    margin: 0 auto;
+    position: absolute;
+    bottom: -15px;
 }
 
 .project {
