@@ -35,7 +35,6 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
     const projectList = document.getElementById('project-list');
-    const profileImageContainer = document.getElementById('profile-image-container');
 
     // GitHub kullanıcı adını buraya yaz
     const username = 'ahmetbalcik';
@@ -45,12 +44,6 @@
         .then(response => response.json())
         .then(data => {
             // Profil fotoğrafını göster
-            const profileImage = document.createElement('img');
-            profileImage.src = data.avatar_url;
-            profileImage.alt = 'Profile Image';
-
-            profileImageContainer.appendChild(profileImage);
-
             // Kullanıcının projelerini çek
             fetch(`https://api.github.com/users/${username}/repos`)
                 .then(response => response.json())
