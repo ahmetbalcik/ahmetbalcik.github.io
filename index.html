@@ -9,16 +9,28 @@
 </head>
 <body>
     <header>
-        <h1>Hoş Geldiniz!</h1>
-        <p>GitHub sayfama hoş geldiniz. Projelerimi inceleyebilir ve benimle iletişime geçebilirsiniz.</p>
+        <div class="container">
+            <h1>GitHub Sayfam</h1>
+            <p>Merhaba, benim adım [Adın]. GitHub projelerimi keşfedin ve benimle iletişime geçin.</p>
+        </div>
     </header>
 
-    <section id="projects">
+    <section id="projects" class="container">
         <h2>Projelerim</h2>
-        <!-- Buraya GitHub projelerinin listesi eklenebilir -->
+        <div class="project">
+            <h3>Proje Adı 1</h3>
+            <p>Açıklama buraya gelecek.</p>
+            <!-- Proje detayları ve linkleri ekleyebilirsin -->
+        </div>
+        <div class="project">
+            <h3>Proje Adı 2</h3>
+            <p>Açıklama buraya gelecek.</p>
+            <!-- Proje detayları ve linkleri ekleyebilirsin -->
+        </div>
+        <!-- Daha fazla proje ekleyebilirsin -->
     </section>
 
-    <section id="contact">
+    <section id="contact" class="container">
         <h2>İletişim</h2>
         <p>Email: example@example.com</p>
         <p>LinkedIn: linkedin.com/in/example</p>
@@ -27,24 +39,29 @@
 </body>
 </html>
 <style>
-  body {
+    body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
-    color: #333;
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 header {
-    background-color: #007BFF;
+    background-color: #007bff;
     color: #fff;
-    text-align: center;
     padding: 50px 0;
+    text-align: center;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2em;
+    font-size: 2.5em;
 }
 
 header p {
@@ -52,15 +69,19 @@ header p {
 }
 
 section {
-    margin: 20px;
+    margin: 40px 0;
 }
 
 h2 {
-    color: #007BFF;
+    color: #007bff;
 }
 
-p {
-    font-size: 1.1em;
+.project {
+    margin-bottom: 30px;
+}
+
+.project h3 {
+    color: #007bff;
 }
 
 /* Diğer özelleştirmeleri buraya ekleyebilirsin */
