@@ -4,30 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>GitHub Sayfam</title>
 </head>
 <body>
     <header>
         <div class="container">
             <h1>GitHub Sayfam</h1>
-            <p>Merhaba, benim adım Ahmet. GitHub projelerimi keşfedin ve benimle iletişime geçin.</p>
+            <p>Merhaba, benim adım [Adın]. GitHub projelerimi keşfedin ve benimle iletişime geçin.</p>
         </div>
     </header>
 
     <section id="projects" class="container">
         <h2>Projelerim</h2>
-        <div class="project">
-            <h3>Proje Adı 1</h3>
-            <p>Açıklama buraya gelecek.</p>
-            <!-- Proje detayları ve linkleri ekleyebilirsin -->
-        </div>
-        <div class="project">
-            <h3>Proje Adı 2</h3>
-            <p>Açıklama buraya gelecek.</p>
-            <!-- Proje detayları ve linkleri ekleyebilirsin -->
-        </div>
-        <!-- Daha fazla proje ekleyebilirsin -->
+        <div id="project-list"></div>
     </section>
 
     <section id="contact" class="container">
@@ -36,6 +25,37 @@
         <p>LinkedIn: linkedin.com/in/example</p>
         <!-- Diğer iletişim bilgilerini ekleyebilirsin -->
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    const projectList = document.getElementById('project-list');
+
+    // GitHub kullanıcı adını buraya yaz
+    const username = 'ahmetbalcik';
+
+    // GitHub API'den projeleri çek
+    fetch(`https://api.github.com/users/${username}/repos`)
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(project => {
+                const projectDiv = document.createElement('div');
+                projectDiv.classList.add('project');
+
+                const projectName = document.createElement('h3');
+                projectName.textContent = project.name;
+
+                const projectDescription = document.createElement('p');
+                projectDescription.textContent = project.description || 'No description available.';
+
+                projectDiv.appendChild(projectName);
+                projectDiv.appendChild(projectDescription);
+                projectList.appendChild(projectDiv);
+            });
+        })
+        .catch(error => console.error('Error fetching GitHub data:', error));
+});
+
+    </script>
 </body>
 </html>
 <style>
@@ -107,7 +127,5 @@ h2 {
 .project:hover h3 {
     color: #007bff;
 }
-
-/* Diğer özelleştirmeleri buraya ekleyebilirsin */
 
 </style>
