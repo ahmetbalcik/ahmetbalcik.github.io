@@ -245,9 +245,11 @@
 
     <section id="projects" class="container">
         <h2 class="section-title">Projelerim</h2>
+        <a href=”javascript:projecturl()”>
         <div id="project-list">
             
         </div>
+        </a>
     </section>
 
     <section id="contact" class="container">
@@ -281,11 +283,14 @@
                                 projectName.textContent = project.name;
 
                                 const projectDescription = document.createElement('p');
-                                projectDescription.textContent = project.description || 'No description available.';
+                                projectDescription.textContent = project.description || 'Detayları sayfaya giderek öğrenebilirsiniz.';
 
                                 projectDiv.appendChild(projectName);
                                 projectDiv.appendChild(projectDescription);
                                 projectList.appendChild(projectDiv);
+                                function projecturl(){
+                                    window.location.href = project.html_rul;
+                                }
                             });
                         })
                         .catch(error => console.error('Error fetching GitHub projects:', error));
