@@ -245,7 +245,7 @@
 
     <section id="projects" class="container">
         <h2 class="section-title">Projelerim</h2>
-        <a href="#" onclick="projecturl(); return false;">
+        <a href="#" id="project-link">
         <div id="project-list">
             
         </div>
@@ -288,9 +288,14 @@
                                 projectDiv.appendChild(projectName);
                                 projectDiv.appendChild(projectDescription);
                                 projectList.appendChild(projectDiv);
-                                function projecturl(){
-                                    window.location.href = project.html_rul;
-                                }
+
+                                document.getElementById("project-link").addEventListener("click", projecturl);
+
+                                function projecturl(event) {
+                                    var projectUrl = project.html_url;
+                                    event.preventDefault();
+                                    window.location.href = projectUrl;
+}
                             });
                         })
                         .catch(error => console.error('Error fetching GitHub projects:', error));
