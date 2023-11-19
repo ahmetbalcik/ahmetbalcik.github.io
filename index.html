@@ -122,14 +122,42 @@
             text-align: center;
         }
 
+        .project-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
         .project {
             background-color: #fff;
             border: 1px solid #dee2e6;
             border-radius: 8px;
             padding: 20px;
-            margin-bottom: 20px;
+            margin: 10px;
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
             transition: box-shadow 0.3s ease, transform 0.3s ease;
+            animation: pulse 1s infinite, fadeIn 1s ease-out;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
 
         .project:hover {
@@ -150,6 +178,81 @@
         section#contact p {
             font-size: 1.1em;
         }
+
+        /* Animasyonlar */
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleUp {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes colorChange {
+            0% {
+                color: #343a40;
+            }
+            50% {
+                color: #007bff;
+            }
+            100% {
+                color: #343a40;
+            }
+        }
+
+        @keyframes backgroundChange {
+            0% {
+                background-color: #f8f9fa;
+            }
+            50% {
+                background-color: #ffc107;
+            }
+            100% {
+                background-color: #f8f9fa;
+            }
+        }
+
+        @keyframes shadowPulse {
+            0% {
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            50% {
+                box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            }
+            100% {
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            }
+        }
     </style>
 </head>
 
@@ -157,71 +260,35 @@
     <!-- Header -->
     <header>
         <div class="container">
-            <h1 class="title">GitHub Sayfam</h1>
-            <p class="subtitle">Merhaba, benim adım Ahmet. Projelerimi keşfedin ve benimle iletişime geçin.</p>
+            <h1 class="title" style="animation: slideIn 1s ease-out;">GitHub Sayfam</h1>
+            <p class="subtitle" style="animation: fadeIn 1s ease-out 0.5s;">Merhaba, benim adım Ahmet. Projelerimi keşfedin ve benimle iletişime geçin.</p>
         </div>
     </header>
 
     <!-- Profil Resmi -->
     <section id="profile" class="container">
         <div id="profile-image-container">
-            <img src="https://avatars.githubusercontent.com/u/126890200?v=4" alt="Profile Image">
+            <img src="https://avatars.githubusercontent.com/u/126890200?v=4" alt="Profile Image" style="animation: scaleUp 0.5s ease;">
         </div>
     </section>
 
     <!-- Dil Bilgileri -->
     <section id="languages" class="container">
         <h2 class="section-title">Bildiğim Diller</h2>
-        <div class="language-container">
+        <div class="language-container" style="animation: rotate 1s ease;">
             <!-- (Dil logoları ve isimleri) -->
-            <div class="language">
+            <div class="language" style="animation: colorChange 1s infinite;">
                 <img src="https://img.icons8.com/color/64/000000/python.png" alt="Python Logo">
                 <p>Python</p>
             </div>
-            <div class="language">
-                <img src="https://img.icons8.com/color/64/000000/c-plus-plus-logo.png" alt="C++ Logo">
-                <p>C++</p>
-            </div>
-            <div class="language">
-                <img src="https://img.icons8.com/color/64/000000/javascript.png" alt="JavaScript Logo">
-                <p>JavaScript</p>
-            </div>
-            <div class="language">
-                <img src="https://img.icons8.com/color/64/000000/swift.png" alt="Swift Logo">
-                <p>Swift</p>
-            </div>
-            <div class="language">
-                <img src="https://img.icons8.com/dusk/64/000000/php-logo.png" alt="PHP Logo">
-                <p>PHP</p>
-            </div>
-            <!-- Eklenen diller -->
-            <div class="language">
-                <img src="https://img.icons8.com/color/64/000000/java-coffee-cup-logo.png" alt="Java Logo">
-                <p>Java</p>
-            </div>
-            <div class="language">
-                <img src="https://img.icons8.com/color/64/000000/html-5.png" alt="HTML Logo">
-                <p>HTML</p>
-            </div>
-            <div class="language">
-                <img src="https://img.icons8.com/color/64/000000/css3.png" alt="CSS Logo">
-                <p>CSS</p>
-            </div>
-            <div class="language">
-                <img src="https://img.icons8.com/color/64/000000/react-native.png" alt="React Logo">
-                <p>React</p>
-            </div>
-            <div class="language">
-                <img src="https://img.icons8.com/color/64/000000/angularjs.png" alt="Angular Logo">
-                <p>Angular</p>
-            </div>
+            <!-- ... Diğer diller ... -->
         </div>
     </section>
 
     <!-- Projeler -->
     <section id="projects" class="container">
         <h2 class="section-title">Projelerim</h2>
-        <div id="project-list">
+        <div id="project-list" class="project-container" style="animation: backgroundChange 1s infinite;">
             <!-- Projeler buraya eklenecek -->
         </div>
     </section>
@@ -273,8 +340,6 @@
                         .catch(error => console.error('Error fetching GitHub projects:', error));
                 })
                 .catch(error => console.error('Error fetching GitHub profile:', error));
-
-            // Projeye tıklandığında yönlendirme yapacak fonksiyon
             function projecturl(projectUrl) {
                 window.location.href = projectUrl;
             }
