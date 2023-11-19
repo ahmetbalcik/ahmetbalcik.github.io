@@ -23,7 +23,7 @@
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
@@ -104,7 +104,7 @@
 
         .language {
             text-align: center;
-            margin: 0 25px;
+            margin: 0 20px;
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -248,12 +248,12 @@
     </section>
 
     <section id="projects" class="container">
-        <h2 class="section-title">Projelerim</h2>
-        <a href="#" id="project-link">
+        <h2 class="section-title">
+            Projelerim
+        </h2>
         <div id="project-list">
-            
+
         </div>
-        </a>
     </section>
 
     <section id="contact" class="container">
@@ -264,48 +264,49 @@
     </section>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const projectList = document.getElementById('project-list');
+    document.addEventListener('DOMContentLoaded', function () {
+        const projectList = document.getElementById('project-list');
 
-            // GitHub kullanıcı adını buraya yaz
-            const username = 'ahmetbalcik';
+        // GitHub kullanıcı adını buraya yaz
+        const username = 'ahmetbalcik';
 
-            // GitHub API'den kullanıcı bilgilerini çek
-            fetch(`https://api.github.com/users/${username}`)
-                .then(response => response.json())
-                .then(data => {
-                    // Profil fotoğrafını göster
-                    // Kullanıcının projelerini çek
-                    fetch(`https://api.github.com/users/${username}/repos`)
-                        .then(response => response.json())
-                        .then(projects => {
-                            projects.forEach(project => {
-                                const projectDiv = document.createElement('div');
-                                projectDiv.classList.add('project');
+        // GitHub API'den kullanıcı bilgilerini çek
+        fetch(`https://api.github.com/users/${username}`)
+            .then(response => response.json())
+            .then(data => {
+                // Kullanıcının projelerini çek
+                fetch(`https://api.github.com/users/${username}/repos`)
+                    .then(response => response.json())
+                    .then(projects => {
+                        projects.forEach(project => {
+                            const projectDiv = document.createElement('div');
+                            projectDiv.classList.add('project');
 
-                                const projectName = document.createElement('h3');
-                                projectName.textContent = project.name;
+                            const projectName = document.createElement('h3');
+                            projectName.textContent = project.name;
 
-                                const projectDescription = document.createElement('p');
-                                projectDescription.textContent = project.description || 'Detayları sayfaya giderek öğrenebilirsiniz.';
+                            const projectDescription = document.createElement('p');
+                            projectDescription.textContent = project.description || 'Detayları sayfaya giderek öğrenebilirsiniz.';
 
-                                projectDiv.appendChild(projectName);
-                                projectDiv.appendChild(projectDescription);
-                                projectList.appendChild(projectDiv);
-
-                                document.getElementById("project-link").addEventListener("click", projecturl);
-
-                                function projecturl(event) {
-                                    var projectUrl = project.html_url;
-                                    event.preventDefault();
-                                    window.location.href = projectUrl;
-}
+                            // Projeye tıklandığında projecturl fonksiyonunu çağır
+                            projectDiv.addEventListener("click", function () {
+                                projecturl(project.html_url);
                             });
-                        })
-                        .catch(error => console.error('Error fetching GitHub projects:', error));
-                })
-                .catch(error => console.error('Error fetching GitHub profile:', error));
-        });
-    </script>
+
+                            projectDiv.appendChild(projectName);
+                            projectDiv.appendChild(projectDescription);
+                            projectList.appendChild(projectDiv);
+                        });
+                    })
+                    .catch(error => console.error('Error fetching GitHub projects:', error));
+            })
+            .catch(error => console.error('Error fetching GitHub profile:', error));
+
+        // Projeye tıklandığında yönlendirme yapacak fonksiyon
+        function projecturl(projectUrl) {
+            window.location.href = projectUrl;
+        }
+    });
+</script>
 </body>
 </html>
