@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitHub Sayfam</title>
     <style>
-        /* (Diğer stiller) */
-
+        /* Genel stil tanımları */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -18,7 +18,7 @@
             transition: background-color 0.5s ease;
         }
 
-        a{
+        a {
             text-decoration: none
         }
 
@@ -27,6 +27,7 @@
             margin: 0 auto;
         }
 
+        /* Header stil tanımları */
         header {
             background-color: #343a40;
             color: #fff;
@@ -52,26 +53,7 @@
             animation: fadeIn 1s ease-out 0.5s;
         }
 
-        @keyframes slideIn {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
+        /* Profil resmi stil tanımları */
         #profile-image-container {
             text-align: center;
             margin-top: -50px;
@@ -90,6 +72,7 @@
             transform: scale(1.1);
         }
 
+        /* Dil bilgileri stil tanımları */
         #languages {
             margin: 40px 0;
             text-align: center;
@@ -133,23 +116,9 @@
             transform: scale(1.2);
         }
 
-        .section-title {
-            color: #343a40;
-            text-align: center;
+        /* Projeler stil tanımları */
+        #projects {
             margin-bottom: 40px;
-            position: relative;
-            transition: color 0.3s ease;
-        }
-
-        .section-title:before {
-            content: "";
-            display: block;
-            width: 100px;
-            height: 3px;
-            background-color: #343a40;
-            margin: 0 auto;
-            position: absolute;
-            bottom: -15px;
         }
 
         .project {
@@ -176,15 +145,15 @@
             color: #007bff;
         }
 
+        /* İletişim bilgileri stil tanımları */
         section#contact p {
             font-size: 1.1em;
         }
-
-        /* Hover efektleri ve özel stillendirmeleri buraya ekleyebilirsin */
-
     </style>
 </head>
+
 <body>
+    <!-- Header -->
     <header>
         <div class="container">
             <h1 class="title">GitHub Sayfam</h1>
@@ -192,70 +161,30 @@
         </div>
     </header>
 
+    <!-- Profil Resmi -->
     <section id="profile" class="container">
         <div id="profile-image-container">
             <img src="https://avatars.githubusercontent.com/u/126890200?v=4" alt="Profile Image">
         </div>
     </section>
 
+    <!-- Dil Bilgileri -->
     <section id="languages" class="container">
         <h2 class="section-title">Bildiğim Diller</h2>
         <div class="language-container">
             <!-- (Dil logoları ve isimleri) -->
-            <div class="language-container">
-            <div class="language">
-                <img src="https://img.icons8.com/color/64/000000/python.png" alt="Python Logo">
-                <p>Python</p>
-            </div>
-            <div class="language">
-                <img src="https://img.icons8.com/color/64/000000/c-plus-plus-logo.png" alt="C++ Logo">
-                <p>C++</p>
-            </div>
-            <div class="language">
-                <img src="https://img.icons8.com/color/64/000000/javascript.png" alt="JavaScript Logo">
-                <p>JavaScript</p>
-            </div>
-            <div class="language">
-                <img src="https://img.icons8.com/color/64/000000/swift.png" alt="Swift Logo">
-                <p>Swift</p>
-            </div>
-            <div class="language">
-                <img src="https://img.icons8.com/dusk/64/000000/php-logo.png" alt="PHP Logo">
-                <p>PHP</p>
-            </div>
-            <!-- Eklenen diller -->
-            <div class="language">
-                <img src="https://img.icons8.com/color/64/000000/java-coffee-cup-logo.png" alt="Java Logo">
-                <p>Java</p>
-            </div>
-            <div class="language">
-                <img src="https://img.icons8.com/color/64/000000/html-5.png" alt="HTML Logo">
-                <p>HTML</p>
-            </div>
-            <div class="language">
-                <img src="https://img.icons8.com/color/64/000000/css3.png" alt="CSS Logo">
-                <p>CSS</p>
-            </div>
-            <div class="language">
-                <img src="https://img.icons8.com/color/64/000000/react-native.png" alt="React Logo">
-                <p>React</p>
-            </div>
-            <div class="language">
-                <img src="https://img.icons8.com/color/64/000000/angularjs.png" alt="Angular Logo">
-                <p>Angular</p>
-            </div>
         </div>
     </section>
 
+    <!-- Projeler -->
     <section id="projects" class="container">
-        <h2 class="section-title">
-            Projelerim
-        </h2>
+        <h2 class="section-title">Projelerim</h2>
         <div id="project-list">
-
+            <!-- Projeler buraya eklenecek -->
         </div>
     </section>
 
+    <!-- İletişim Bilgileri -->
     <section id="contact" class="container">
         <h2 class="section-title">İletişim</h2>
         <p>Email: blck.ahmet@icloud.com</p>
@@ -263,50 +192,52 @@
         <!-- Diğer iletişim bilgilerini ekleyebilirsin -->
     </section>
 
+    <!-- JavaScript Kodları -->
     <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const projectList = document.getElementById('project-list');
+        document.addEventListener('DOMContentLoaded', function () {
+            const projectList = document.getElementById('project-list');
 
-        // GitHub kullanıcı adını buraya yaz
-        const username = 'ahmetbalcik';
+            // GitHub kullanıcı adını buraya yaz
+            const username = 'ahmetbalcik';
 
-        // GitHub API'den kullanıcı bilgilerini çek
-        fetch(`https://api.github.com/users/${username}`)
-            .then(response => response.json())
-            .then(data => {
-                // Kullanıcının projelerini çek
-                fetch(`https://api.github.com/users/${username}/repos`)
-                    .then(response => response.json())
-                    .then(projects => {
-                        projects.forEach(project => {
-                            const projectDiv = document.createElement('div');
-                            projectDiv.classList.add('project');
+            // GitHub API'den kullanıcı bilgilerini çek
+            fetch(`https://api.github.com/users/${username}`)
+                .then(response => response.json())
+                .then(data => {
+                    // Kullanıcının projelerini çek
+                    fetch(`https://api.github.com/users/${username}/repos`)
+                        .then(response => response.json())
+                        .then(projects => {
+                            projects.forEach(project => {
+                                const projectDiv = document.createElement('div');
+                                projectDiv.classList.add('project');
 
-                            const projectName = document.createElement('h3');
-                            projectName.textContent = project.name;
+                                const projectName = document.createElement('h3');
+                                projectName.textContent = project.name;
 
-                            const projectDescription = document.createElement('p');
-                            projectDescription.textContent = project.description || 'Detayları sayfaya giderek öğrenebilirsiniz.';
+                                const projectDescription = document.createElement('p');
+                                projectDescription.textContent = project.description || 'Detayları sayfaya giderek öğrenebilirsiniz.';
 
-                            // Projeye tıklandığında projecturl fonksiyonunu çağır
-                            projectDiv.addEventListener("click", function () {
-                                projecturl(project.html_url);
+                                // Projeye tıklandığında projecturl fonksiyonunu çağır
+                                projectDiv.addEventListener("click", function () {
+                                    projecturl(project.html_url);
+                                });
+
+                                projectDiv.appendChild(projectName);
+                                projectDiv.appendChild(projectDescription);
+                                projectList.appendChild(projectDiv);
                             });
+                        })
+                        .catch(error => console.error('Error fetching GitHub projects:', error));
+                })
+                .catch(error => console.error('Error fetching GitHub profile:', error));
 
-                            projectDiv.appendChild(projectName);
-                            projectDiv.appendChild(projectDescription);
-                            projectList.appendChild(projectDiv);
-                        });
-                    })
-                    .catch(error => console.error('Error fetching GitHub projects:', error));
-            })
-            .catch(error => console.error('Error fetching GitHub profile:', error));
-
-        // Projeye tıklandığında yönlendirme yapacak fonksiyon
-        function projecturl(projectUrl) {
-            window.location.href = projectUrl;
-        }
-    });
-</script>
+            // Projeye tıklandığında yönlendirme yapacak fonksiyon
+            function projecturl(projectUrl) {
+                window.location.href = projectUrl;
+            }
+        });
+    </script>
 </body>
+
 </html>
