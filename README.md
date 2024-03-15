@@ -22,7 +22,7 @@ Bu depoda bazı projelerimi bulabilirsiniz. İlgilendiğiniz bir proje varsa lü
 ## 📫 İletişim
 
 - 📧 Email: blck.ahmet@icloud.com
-- 📷 Instagram: [ahmetbalciks](https://www.instagram.com/ahmetbalciks/)
+- 📷 Instagram: [ahmetbalciks](https://www.instagram.com/ahmetbalciks_/)
 
 ## 🌐 Web Sayfam
 
